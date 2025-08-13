@@ -257,6 +257,184 @@ html {
   transform: scale(1.1);
 }
 
+.tour-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 2;
+}
+
+.tour-card:hover .tour-hover-overlay {
+  opacity: 1;
+}
+
+.tour-view-details-btn {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 25px;
+  transition: var(--transition);
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.tour-card:hover .tour-view-details-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.tour-view-details-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tour Modal Styles */
+.tour-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.tour-modal {
+  background: white;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.tour-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #666;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.tour-modal-close:hover {
+  background: #f8f9fa;
+  color: #333;
+  transform: scale(1.1);
+}
+
+.tour-modal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.tour-modal-image {
+  height: 400px;
+  overflow: hidden;
+  border-radius: 20px 0 0 0;
+}
+
+.tour-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tour-modal-details {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tour-modal-details h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.tour-modal-description {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.tour-modal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.tour-modal-meta .meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+.tour-modal-meta .meta-item i {
+  color: var(--primary-color);
+  width: 20px;
+}
+
+.tour-modal-highlights h5 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.tour-modal-highlights .highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tour-modal-highlights .highlights-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.tour-modal-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 .tour-price {
   position: absolute;
   top: 15px;
@@ -902,4 +1080,27 @@ html {
 
 .about-content.single-column .about-text {
   max-width: 100%;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .tour-modal-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .tour-modal-image {
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .tour-modal-details {
+    padding: 30px 20px;
+  }
+  
+  .tour-modal-actions {
+    flex-direction: column;
+  }
+  
+  .tour-modal-actions .btn {
+    width: 100%;
+  }
 }
