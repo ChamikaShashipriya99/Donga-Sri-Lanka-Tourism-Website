@@ -172,12 +172,12 @@ const Home = () => {
               <p className="home-subtitle">
                 Experience authentic Sri Lankan adventures with our curated tours and sustainable tourism experiences
               </p>
-              <button className="btn btn-light btn-lg px-4 me-2">
+              <Link to="/tours" className="btn btn-light btn-lg px-4 me-2">
                 View Tours
-              </button>
-              <button className="btn btn-outline-light btn-lg px-4">
-                About Us
-              </button>
+              </Link>
+              <Link to="/contact" className="btn btn-outline-light btn-lg px-4">
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
