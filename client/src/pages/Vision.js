@@ -145,12 +145,12 @@ const Vision = () => {
               <p className="lead mb-4">
                 Experience Sri Lanka the responsible way and be part of our sustainable tourism journey.
               </p>
-              <button className="btn btn-light btn-lg me-3">
+              <a href="/tours" className="btn btn-light btn-lg me-3">
                 Book a Tour
-              </button>
-              <button className="btn btn-outline-light btn-lg">
+              </a>
+              <a href="/contact" className="btn btn-outline-light btn-lg">
                 Contact Us
-              </button>
+              </a>
             </div>
           </div>
         </div>

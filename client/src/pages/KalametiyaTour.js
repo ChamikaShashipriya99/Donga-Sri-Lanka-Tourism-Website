@@ -6,8 +6,8 @@ const KalametiyaTour = () => {
 
   const kalametiyaImages = [
     '/images/assets/kalametiya.jpeg',
-    '/images/assets/kalametiya.jpeg', // Using the same image for now, you can add more later
-    '/images/assets/kalametiya.jpeg'
+    '/images/assets/kalametiya1.jpeg', // Using the same image for now, you can add more later
+    '/images/assets/kalmatiya.webp'
   ];
 
   const nextImage = () => {
