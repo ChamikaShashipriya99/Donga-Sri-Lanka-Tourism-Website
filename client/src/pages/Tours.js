@@ -177,7 +177,7 @@ const Tours = () => {
           )}
           <video
             ref={videoRef}
-            src="/videos/tours/tour-bg-video.mp4"
+            src="https://videos.pexels.com/video-files/32703916/13942121_2560_1440_60fps.mp4"
             muted
             loop
             playsInline
