@@ -55,7 +55,7 @@ const About = () => {
           )}
           <video
             ref={videoRef}
-            src="/videos/about/about-bg-video.mp4"
+            src="https://videos.pexels.com/video-files/32718913/13948895_2560_1440_60fps.mp4"
             muted
             loop
             playsInline
