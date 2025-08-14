@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Tours = () => {
   const videoRef = useRef(null);
@@ -6,10 +7,19 @@ const Tours = () => {
   const [videoError, setVideoError] = useState(false);
   const [selectedTour, setSelectedTour] = useState(null);
   const [showTourModal, setShowTourModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleViewDetails = (tour) => {
-    setSelectedTour(tour);
-    setShowTourModal(true);
+    if (tour.id === 1) { // Galle Fort Tour
+      navigate('/galle-fort-tour');
+    } else if (tour.id === 2) { // Pottery Experience Tour
+      navigate('/pottery-tour');
+    } else if (tour.id === 3) { // Moonstone and Waterfall Tour
+      navigate('/moonstone-tour');
+    } else {
+      setSelectedTour(tour);
+      setShowTourModal(true);
+    }
   };
 
   const closeTourModal = () => {

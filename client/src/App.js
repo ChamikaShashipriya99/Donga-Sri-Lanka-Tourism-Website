@@ -10,6 +10,10 @@ import Tours from './pages/Tours';
 import About from './pages/About';
 import Vision from './pages/Vision';
 import Contact from './pages/Contact';
+import Gallery from './pages/Gallery';
+import GalleFortTour from './pages/GalleFortTour';
+import PotteryTour from './pages/PotteryTour';
+import MoonstoneTour from './pages/MoonstoneTour';
 import Footer from './components/Footer';
 import PageTransition from './components/PageTransition';
 
@@ -27,6 +31,26 @@ function AnimatedRoutes() {
         <Route path="/tours" element={
           <PageTransition>
             <Tours />
+          </PageTransition>
+        } />
+        <Route path="/gallery" element={
+          <PageTransition>
+            <Gallery />
+          </PageTransition>
+        } />
+        <Route path="/galle-fort-tour" element={
+          <PageTransition>
+            <GalleFortTour />
+          </PageTransition>
+        } />
+        <Route path="/pottery-tour" element={
+          <PageTransition>
+            <PotteryTour />
+          </PageTransition>
+        } />
+        <Route path="/moonstone-tour" element={
+          <PageTransition>
+            <MoonstoneTour />
           </PageTransition>
         } />
         <Route path="/about" element={
