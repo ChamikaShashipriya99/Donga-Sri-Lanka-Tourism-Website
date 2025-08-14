@@ -9,8 +9,8 @@ const Home = () => {
   const errorTimerRef = useRef(null);
 
   const videos = [
-    '/videos/hero/background1.mp4',
-    '/videos/hero/background2.mp4'
+    'https://videos.pexels.com/video-files/17842220/17842220-uhd_2560_1440_25fps.mp4',
+    'https://videos.pexels.com/video-files/9903225/9903225-hd_1920_1080_25fps.mp4'
   ];
 
   useEffect(() => {
