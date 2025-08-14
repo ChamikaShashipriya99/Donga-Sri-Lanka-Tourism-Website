@@ -66,16 +66,6 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <Link 
-                className={`nav-link ${isActive('/gallery') ? 'active' : ''}`} 
-                to="/gallery"
-                onClick={() => setIsMobileMenuOpen(false)}
-                style={{ color: '#ffffff', fontWeight: '500' }}
-              >
-                Gallery
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link 
                 className={`nav-link ${isActive('/about') ? 'active' : ''}`} 
                 to="/about"
                 onClick={() => setIsMobileMenuOpen(false)}

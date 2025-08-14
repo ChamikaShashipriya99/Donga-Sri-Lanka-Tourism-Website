@@ -192,7 +192,7 @@ const Home = () => {
           <div className="row">
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="featured-tour-card">
-                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Galle Fort" className="img-fluid rounded" />
+                <img src='/images/assets/gallefort.jpg '/>
                 <div className="tour-info">
                   <h4>Galle Fort Walking Tour</h4>
                   <p>Discover the historic Galle Fort with its ramparts, beaches, and vibrant businesses.</p>
@@ -204,7 +204,7 @@ const Home = () => {
             
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="featured-tour-card">
-                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80" alt="Sinharaja Forest" className="img-fluid rounded" />
+                <img src='/images/assets/sinharaja.jpeg '/>
                 <div className="tour-info">
                   <h4>Sinharaja Rainforest Trek</h4>
                   <p>Explore Sri Lanka's largest rainforest, a UNESCO protected biodiversity site.</p>
@@ -216,7 +216,7 @@ const Home = () => {
             
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="featured-tour-card">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" alt="Stilt Fishing" className="img-fluid rounded" />
+                <img src='/images/assets/koggala.jpeg '/>
                 <div className="tour-info">
                   <h4>Koggala Lake & Stilt Fishing</h4>
                   <p>Experience traditional stilt fishing and explore the beautiful Koggala Lake.</p>
