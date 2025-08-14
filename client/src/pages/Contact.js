@@ -30,9 +30,20 @@ const Contact = () => {
 
   return (
     <div>
-      {/* Hero Section with Background */}
+      {/* Hero Section with Background Video */}
       <section className="contact-hero section">
         <div className="contact-hero-background">
+          <video
+            className="contact-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/assets/contact-fallback.jpg"
+          >
+            <source src="/videos/contact/contact.mp4" type="video/mp4" />
+          </video>
           <div className="contact-hero-overlay"></div>
         </div>
         <div className="container">
@@ -110,13 +121,13 @@ const Contact = () => {
                 <div className="social-links mt-4">
                   <h5 className="mb-3">Follow Us</h5>
                   <div className="d-flex gap-3">
-                    <a href="#" className="text-primary-custom fs-4">
+                    <a href="https://www.facebook.com/DongaSriLanka" target="_blank" rel="noopener noreferrer" className="text-primary-custom fs-4">
                       <i className="fab fa-facebook"></i>
                     </a>
-                    <a href="#" className="text-primary-custom fs-4">
+                    <a href="https://www.youtube.com/@donga1020" target="_blank" rel="noopener noreferrer" className="text-primary-custom fs-4">
                       <i className="fab fa-youtube"></i>
                     </a>
-                    <a href="#" className="text-primary-custom fs-4">
+                    <a href="https://wa.me/94766391036" target="_blank" rel="noopener noreferrer" className="text-primary-custom fs-4">
                       <i className="fab fa-whatsapp"></i>
                     </a>
                   </div>

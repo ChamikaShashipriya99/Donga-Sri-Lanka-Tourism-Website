@@ -11,6 +11,17 @@ const Vision = () => {
       {/* Hero Section */}
       <section className="vision-hero section">
         <div className="vision-hero-background">
+          <video
+            className="vision-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source src="/videos/vision/vision.mp4" type="video/mp4" />
+            <source src="/videos/vision/Vision.mp4" type="video/mp4" />
+          </video>
           <div className="vision-hero-overlay"></div>
         </div>
         <div className="container">

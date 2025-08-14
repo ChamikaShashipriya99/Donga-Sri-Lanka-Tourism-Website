@@ -6,7 +6,7 @@ const KanneliyaTour = () => {
 
   const kanneliyaImages = [
     '/images/assets/kanneliya.jpeg',
-    '/images/assets/kanneliya.jpeg', // Using the same image for now, you can add more later
+    '/images/assets/kanneliya2.jpg', // Using the same image for now, you can add more later
     '/images/assets/kanneliya1.jpeg'
   ];
 

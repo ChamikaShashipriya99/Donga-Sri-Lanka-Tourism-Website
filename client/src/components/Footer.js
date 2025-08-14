@@ -131,7 +131,7 @@ const Footer = () => {
               display: 'flex',
               gap: '1rem'
             }}>
-              <a href="#" className="social-link" style={{
+              <a href="https://www.facebook.com/DongaSriLanka" target="_blank" rel="noopener noreferrer" className="social-link" style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -156,7 +156,7 @@ const Footer = () => {
               }}>
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" className="social-link" style={{
+              <a href="https://www.youtube.com/@donga1020" target="_blank" rel="noopener noreferrer" className="social-link" style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -181,7 +181,7 @@ const Footer = () => {
               }}>
                 <i className="fab fa-youtube"></i>
               </a>
-              <a href="#" className="social-link" style={{
+              <a href="https://wa.me/94766391036" target="_blank" rel="noopener noreferrer" className="social-link" style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -359,7 +359,7 @@ const Footer = () => {
                 margin: 0,
                 color: '#999999',
                 fontSize: '0.9rem'
-              }}>&copy; 2024 Donga Sri Lanka. All rights reserved.</p>
+              }}>&copy; 2025 Donga, Sri Lanka. All rights reserved.</p>
             </div>
             <div className="col-md-4" style={{ marginBottom: '1rem' }}>
               <p style={{

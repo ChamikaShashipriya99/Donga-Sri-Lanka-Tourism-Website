@@ -327,6 +327,200 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Donga Sustainable Tourism Section */}
+      <section className="py-5" style={{backgroundColor: '#1a1a1a'}}>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 mb-4 mb-lg-0">
+              <div className="text-white p-4">
+                <div className="quote-container position-relative">
+                  <div className="quote-icon position-absolute" style={{
+                    top: '-20px',
+                    left: '-20px',
+                    fontSize: '4rem',
+                    color: 'rgba(255,255,255,0.1)',
+                    fontFamily: 'Georgia, serif',
+                    animation: 'float 3s ease-in-out infinite'
+                  }}>
+                    "
+                  </div>
+                  <blockquote className="blockquote animated-text" style={{
+                    fontSize: '1.3rem', 
+                    lineHeight: '1.8', 
+                    fontStyle: 'italic',
+                    position: 'relative',
+                    zIndex: 2,
+                    textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                  }}>
+                    <span className="text-line" style={{
+                      display: 'inline-block',
+                      opacity: 0,
+                      transform: 'translateY(20px)',
+                      animation: 'fadeInUp 0.8s ease-out 0.2s forwards'
+                    }}>
+                      "Donga is a team dedicated to promote sustainable tourism in the Southern Province of Sri Lanka.
+                    </span>
+                    <span className="text-line" style={{
+                      display: 'inline-block',
+                      opacity: 0,
+                      transform: 'translateY(20px)',
+                      animation: 'fadeInUp 0.8s ease-out 0.6s forwards'
+                    }}>
+                      All our experiences have been curated to highlight the Southern way of life.
+                    </span>
+                    <span className="text-line" style={{
+                      display: 'inline-block',
+                      opacity: 0,
+                      transform: 'translateY(20px)',
+                      animation: 'fadeInUp 0.8s ease-out 1s forwards'
+                    }}>
+                      By touring with Donga, you help local artisans and skilled professionals to uplift their standards of living."
+                    </span>
+                  </blockquote>
+                  <div className="quote-footer mt-4" style={{
+                    opacity: 0,
+                    animation: 'fadeIn 1s ease-out 1.5s forwards'
+                  }}>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="row g-3">
+                <div className="col-6">
+                  <div className="image-container position-relative overflow-hidden rounded shadow-lg" style={{
+                    height: '200px',
+                    transition: 'all 0.4s ease-in-out',
+                    cursor: 'pointer'
+                  }}>
+                    <img 
+                      src="/images/assets/Home1.jpg" 
+                      alt="Young woman making pottery" 
+                      className="img-fluid w-100 h-100"
+                      style={{
+                        objectFit: 'cover',
+                        transition: 'transform 0.4s ease-in-out'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.transform = 'scale(1.1)';
+                        e.target.parentElement.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.transform = 'scale(1)';
+                        e.target.parentElement.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+                      }}
+                    />
+                    <div className="image-overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style={{
+                      background: 'linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.3))',
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease-in-out'
+                    }}>
+                      <i className="fas fa-search-plus text-white" style={{fontSize: '1.5rem'}}></i>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="image-container position-relative overflow-hidden rounded shadow-lg" style={{
+                    height: '200px',
+                    transition: 'all 0.4s ease-in-out',
+                    cursor: 'pointer'
+                  }}>
+                    <img 
+                      src="/images/assets/Home4.jpg" 
+                      alt="Person shaping clay" 
+                      className="img-fluid w-100 h-100"
+                      style={{
+                        objectFit: 'cover',
+                        transition: 'transform 0.4s ease-in-out'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.transform = 'scale(1.1)';
+                        e.target.parentElement.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.transform = 'scale(1)';
+                        e.target.parentElement.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+                      }}
+                    />
+                    <div className="image-overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style={{
+                      background: 'linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.3))',
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease-in-out'
+                    }}>
+                      <i className="fas fa-search-plus text-white" style={{fontSize: '1.5rem'}}></i>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="image-container position-relative overflow-hidden rounded shadow-lg" style={{
+                    height: '200px',
+                    transition: 'all 0.4s ease-in-out',
+                    cursor: 'pointer'
+                  }}>
+                    <img 
+                      src="/images/assets/Home2.jpg" 
+                      alt="Woman at pottery wheel" 
+                      className="img-fluid w-100 h-100"
+                      style={{
+                        objectFit: 'cover',
+                        transition: 'transform 0.4s ease-in-out'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.transform = 'scale(1.1)';
+                        e.target.parentElement.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.transform = 'scale(1)';
+                        e.target.parentElement.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+                      }}
+                    />
+                    <div className="image-overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style={{
+                      background: 'linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.3))',
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease-in-out'
+                    }}>
+                      <i className="fas fa-search-plus text-white" style={{fontSize: '1.5rem'}}></i>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="image-container position-relative overflow-hidden rounded shadow-lg" style={{
+                    height: '200px',
+                    transition: 'all 0.4s ease-in-out',
+                    cursor: 'pointer'
+                  }}>
+                    <img 
+                      src="/images/assets/Home3.jpg" 
+                      alt="Man and woman working together on pottery" 
+                      className="img-fluid w-100 h-100"
+                      style={{
+                        objectFit: 'cover',
+                        transition: 'transform 0.4s ease-in-out'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.transform = 'scale(1.1)';
+                        e.target.parentElement.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.transform = 'scale(1)';
+                        e.target.parentElement.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+                      }}
+                    />
+                    <div className="image-overlay position-absolute w-100 h-100 d-flex align-items-center justify-content-center" style={{
+                      background: 'linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.3))',
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease-in-out'
+                    }}>
+                      <i className="fas fa-search-plus text-white" style={{fontSize: '1.5rem'}}></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-5" style={{backgroundColor: '#2c3e50'}}>
         <div className="container">
