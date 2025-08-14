@@ -32,48 +32,6 @@ const GalleFortTour = () => {
 
   return (
     <div className="galle-fort-tour-page">
-      {/* Hero Section with Image Slider */}
-      <section className="galle-hero section">
-        <div className="image-slider-container">
-          <div className="image-slider">
-            <img 
-              src={galleImages[currentImageIndex]} 
-              alt={`Galle Fort ${currentImageIndex + 1}`}
-              className="slider-image"
-            />
-            <div className="slider-overlay">
-              <div className="container">
-                <div className="row">
-                  <div className="col-lg-8 mx-auto text-center">
-                    <h1 className="hero-title">Galle Fort Walking Tour</h1>
-                    <p className="hero-subtitle">Discover the living heritage of Sri Lanka's most iconic coastal fortress</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Slider Navigation */}
-          <button className="slider-nav prev" onClick={prevImage}>
-            <i className="fas fa-chevron-left"></i>
-          </button>
-          <button className="slider-nav next" onClick={nextImage}>
-            <i className="fas fa-chevron-right"></i>
-          </button>
-          
-          {/* Slider Indicators */}
-          <div className="slider-indicators">
-            {galleImages.map((_, index) => (
-              <button
-                key={index}
-                className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-                onClick={() => setCurrentImageIndex(index)}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Tour Overview Section */}
       <section className="tour-overview py-5">
         <div className="container">
@@ -103,6 +61,97 @@ const GalleFortTour = () => {
             <div className="col-lg-8 mx-auto">
               <div className="overview-content">
                 <h2 className="section-title text-center mb-5">Tour Overview</h2>
+                
+                {/* Galle Fort Image Slider */}
+                <div className="galle-images-slider mb-5">
+                  <div className="slider-wrapper position-relative">
+                    <div className="slider-main">
+                      <img 
+                        src={galleImages[currentImageIndex]} 
+                        alt={`Galle Fort ${currentImageIndex + 1}`}
+                        className="img-fluid rounded shadow"
+                        style={{ width: '100%', height: '400px', objectFit: 'cover' }}
+                      />
+                    </div>
+                    
+                    {/* Slider Navigation */}
+                    <button 
+                      className="slider-nav-btn prev-btn" 
+                      onClick={prevImage}
+                      style={{
+                        position: 'absolute',
+                        left: '10px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        background: 'rgba(0,0,0,0.7)',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        zIndex: 10
+                      }}
+                    >
+                      <i className="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <button 
+                      className="slider-nav-btn next-btn" 
+                      onClick={nextImage}
+                      style={{
+                        position: 'absolute',
+                        right: '10px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        background: 'rgba(0,0,0,0.7)',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '40px',
+                        height: '40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        zIndex: 10
+                      }}
+                    >
+                      <i className="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    {/* Slider Indicators */}
+                    <div className="slider-dots" style={{
+                      position: 'absolute',
+                      bottom: '20px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      display: 'flex',
+                      gap: '8px',
+                      zIndex: 10
+                    }}>
+                      {galleImages.map((_, index) => (
+                        <button
+                          key={index}
+                          className={`dot ${index === currentImageIndex ? 'active' : ''}`}
+                          onClick={() => setCurrentImageIndex(index)}
+                          style={{
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            border: 'none',
+                            background: index === currentImageIndex ? '#007bff' : 'rgba(255,255,255,0.6)',
+                            cursor: 'pointer',
+                            transition: 'background 0.3s ease'
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
                 
                 <div className="overview-text">
                   <h3 className="tour-name">Galle Fort</h3>

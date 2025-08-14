@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const PotteryTour = () => {
+const KalametiyaTour = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const potteryImages = [
-    '/images/assets/pittery.jpeg',
-    '/images/assets/pittery1.jpeg',
-    '/images/assets/pittery2.jpeg'
+  const kalametiyaImages = [
+    '/images/assets/kalametiya.jpeg',
+    '/images/assets/kalametiya.jpeg', // Using the same image for now, you can add more later
+    '/images/assets/kalametiya.jpeg'
   ];
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === potteryImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === kalametiyaImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? potteryImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? kalametiyaImages.length - 1 : prevIndex - 1
     );
   };
 
@@ -31,7 +31,7 @@ const PotteryTour = () => {
   }, []);
 
   return (
-    <div className="pottery-tour-page">
+    <div className="kalametiya-tour-page">
       {/* Tour Overview Section */}
       <section className="tour-overview py-5">
         <div className="container">
@@ -51,7 +51,7 @@ const PotteryTour = () => {
                   </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                  Pottery Experience
+                  Kalametiya Mulkirigala
                 </li>
               </ol>
             </nav>
@@ -62,13 +62,13 @@ const PotteryTour = () => {
               <div className="overview-content">
                 <h2 className="section-title text-center mb-5">Tour Overview</h2>
                 
-                {/* Pottery Images Slider */}
-                <div className="pottery-images-slider mb-5">
+                {/* Kalametiya Images Slider */}
+                <div className="kalametiya-images-slider mb-5">
                   <div className="slider-wrapper position-relative">
                     <div className="slider-main">
                       <img 
-                        src={potteryImages[currentImageIndex]} 
-                        alt={`Pottery Experience ${currentImageIndex + 1}`}
+                        src={kalametiyaImages[currentImageIndex]} 
+                        alt={`Kalametiya Mulkirigala ${currentImageIndex + 1}`}
                         className="img-fluid rounded shadow"
                         style={{ width: '100%', height: '400px', objectFit: 'cover' }}
                       />
@@ -133,7 +133,7 @@ const PotteryTour = () => {
                       gap: '8px',
                       zIndex: 10
                     }}>
-                      {potteryImages.map((_, index) => (
+                      {kalametiyaImages.map((_, index) => (
                         <button
                           key={index}
                           className={`dot ${index === currentImageIndex ? 'active' : ''}`}
@@ -154,32 +154,28 @@ const PotteryTour = () => {
                 </div>
                 
                 <div className="overview-text">
-                  <h3 className="tour-name">Pottery Experience</h3>
+                  <h3 className="tour-name">Kalametiya Mulkirigala</h3>
                   <p className="lead mb-4">
-                    Weligama is a busy coastal city. It is well known for its beaches, seafood and marine ecology. However, in this walking tour, we unveil an unseen aspect of this coastal gem; culture.
+                    Hambantota is the largest district of the Southern Province. Hot climate, rare geographical formations and the food culture are the highlights here.
                   </p>
                   
                   <p className="mb-4">
-                    Pottery has been one of the two life lines in Weligama. The roadside stalls full of earthenware would bear testimony for this. In this adventure, you get the chance to turn the Potter's wheel under the guidance Mr. Gunadasa, the legendary potter of Weligama. Inside the potter's hut you will witness the laborious process of mixing, molding, drying and painting; pretty much the full process of making an earthenware vessel. Get ready to make your own coffee cup or breakfast bowl!
+                    The Dongas would meet you after lunch to drive you upto Mulgirigala aka The Rock Temple. Located on a hillock, the temple is a complex of pagodas and statues which, according to historians, belong to the 2nd century BC. A merry climb of 533 steps would take you to the top of the rock where one could witness the magnanimity of the Southern Province; the eternal blue on one side and the eternal green on the other.
                   </p>
                   
                   <p className="mb-4">
-                    En route to our next destination, we meet the determined fishermen of Kapparatota who take a life risk to bring seafood to the table. You will also get the chance to have a quick walk in the fish market where different varieties of edible fish are sorted cleaned and sold. This is another opportunity to realize that Sri Lankans work hard for their bread and butter. The float ebbing to and fro in the bay is quite a scene and is considered as a very insta-worthy click.
+                    Our next destination is Ussangoda National Park which is an extraordinary geographical formation. According to geologists, a massive meteor that fell here back in the day has lead to the formation of a reddish brown soil structure. The view of the Indian ocean from the Ussangoda Cliff is simply breath taking.
                   </p>
                   
                   <p className="mb-5">
-                    Kushtarajagala or the "healing statue" would be the next stop where we would stand beside a massive rock carving of 16 feet that belongs to the 6th century AD. Why not wish good health to your loved ones here!
-                  </p>
-
-                  <p className="mb-5">
-                    The tour ends with a drink of King Coconut or a boiled corn maize sold by the roadside vendors.
+                    We close the day with a once-in-a-lifetime experience that you can only get in the tropics; a sunset bird watching tour by paddleboat in a coastal lagoon. Gayan our boat operator cum naturalist is confident that this tour is the best birdwatching tour in the island. Countless varieties of endemic and foreign birds could be observed in the Kalametiya Lagoon among the reeds, on the water or hidden in the mangroves. Get your cameras ready!
                   </p>
                 </div>
 
                 {/* Call to Action */}
                 <div className="tour-cta mt-5 text-center">
-                  <h4>Ready to Experience the Art of Pottery?</h4>
-                  <p className="mb-4">Book your pottery experience today and discover the cultural heritage of Weligama.</p>
+                  <h4>Ready to Explore Kalametiya Mulkirigala?</h4>
+                  <p className="mb-4">Book your geological and cultural adventure today and discover the unique landscapes of Hambantota.</p>
                   <div className="d-flex justify-content-center gap-3 flex-wrap">
                     <button className="btn btn-primary btn-lg">
                       <i className="fas fa-calendar me-2"></i>
@@ -204,4 +200,4 @@ const PotteryTour = () => {
   );
 };
 
-export default PotteryTour;
+export default KalametiyaTour;

@@ -16,6 +16,16 @@ const Tours = () => {
       navigate('/pottery-tour');
     } else if (tour.id === 3) { // Moonstone and Waterfall Tour
       navigate('/moonstone-tour');
+    } else if (tour.id === 4) { // Kalametiya Mulkirigala
+      navigate('/kalametiya-tour');
+    } else if (tour.id === 5) { // Brief Garden and Eco Star
+      navigate('/brief-garden-tour');
+    } else if (tour.id === 6) { // Sinharaja Rainforest Trek
+      navigate('/sinharaja-tour');
+    } else if (tour.id === 7) { // Kanneliya Rainforest Trek
+      navigate('/kanneliya-tour');
+    } else if (tour.id === 8) { // Koggala Lake and Stilt Fishing
+      navigate('/koggala-tour');
     } else {
       setSelectedTour(tour);
       setShowTourModal(true);

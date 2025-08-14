@@ -13,6 +13,11 @@ import Contact from './pages/Contact';
 import GalleFortTour from './pages/GalleFortTour';
 import PotteryTour from './pages/PotteryTour';
 import MoonstoneTour from './pages/MoonstoneTour';
+import KalametiyaTour from './pages/KalametiyaTour';
+import BriefGardenTour from './pages/BriefGardenTour';
+import SinharajaTour from './pages/SinharajaTour';
+import KanneliyaTour from './pages/KanneliyaTour';
+import KoggalaTour from './pages/KoggalaTour';
 import Footer from './components/Footer';
 import PageTransition from './components/PageTransition';
 
@@ -45,6 +50,31 @@ function AnimatedRoutes() {
         <Route path="/moonstone-tour" element={
           <PageTransition>
             <MoonstoneTour />
+          </PageTransition>
+        } />
+        <Route path="/kalametiya-tour" element={
+          <PageTransition>
+            <KalametiyaTour />
+          </PageTransition>
+        } />
+        <Route path="/brief-garden-tour" element={
+          <PageTransition>
+            <BriefGardenTour />
+          </PageTransition>
+        } />
+        <Route path="/sinharaja-tour" element={
+          <PageTransition>
+            <SinharajaTour />
+          </PageTransition>
+        } />
+        <Route path="/kanneliya-tour" element={
+          <PageTransition>
+            <KanneliyaTour />
+          </PageTransition>
+        } />
+        <Route path="/koggala-tour" element={
+          <PageTransition>
+            <KoggalaTour />
           </PageTransition>
         } />
         <Route path="/about" element={

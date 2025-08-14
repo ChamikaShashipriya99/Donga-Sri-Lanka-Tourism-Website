@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const PotteryTour = () => {
+const KoggalaTour = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const potteryImages = [
-    '/images/assets/pittery.jpeg',
-    '/images/assets/pittery1.jpeg',
-    '/images/assets/pittery2.jpeg'
+  const koggalaImages = [
+    '/images/assets/koggala.jpeg',
+    '/images/assets/koggala.jpeg', // Using the same image for now, you can add more later
+    '/images/assets/koggala1.jpeg'
   ];
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === potteryImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === koggalaImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? potteryImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? koggalaImages.length - 1 : prevIndex - 1
     );
   };
 
@@ -31,7 +31,7 @@ const PotteryTour = () => {
   }, []);
 
   return (
-    <div className="pottery-tour-page">
+    <div className="koggala-tour-page">
       {/* Tour Overview Section */}
       <section className="tour-overview py-5">
         <div className="container">
@@ -51,7 +51,7 @@ const PotteryTour = () => {
                   </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                  Pottery Experience
+                  Koggala Lake and Stilt Fishing
                 </li>
               </ol>
             </nav>
@@ -62,13 +62,13 @@ const PotteryTour = () => {
               <div className="overview-content">
                 <h2 className="section-title text-center mb-5">Tour Overview</h2>
                 
-                {/* Pottery Images Slider */}
-                <div className="pottery-images-slider mb-5">
+                {/* Koggala Images Slider */}
+                <div className="koggala-images-slider mb-5">
                   <div className="slider-wrapper position-relative">
                     <div className="slider-main">
                       <img 
-                        src={potteryImages[currentImageIndex]} 
-                        alt={`Pottery Experience ${currentImageIndex + 1}`}
+                        src={koggalaImages[currentImageIndex]} 
+                        alt={`Koggala Lake and Stilt Fishing ${currentImageIndex + 1}`}
                         className="img-fluid rounded shadow"
                         style={{ width: '100%', height: '400px', objectFit: 'cover' }}
                       />
@@ -133,7 +133,7 @@ const PotteryTour = () => {
                       gap: '8px',
                       zIndex: 10
                     }}>
-                      {potteryImages.map((_, index) => (
+                      {koggalaImages.map((_, index) => (
                         <button
                           key={index}
                           className={`dot ${index === currentImageIndex ? 'active' : ''}`}
@@ -154,32 +154,28 @@ const PotteryTour = () => {
                 </div>
                 
                 <div className="overview-text">
-                  <h3 className="tour-name">Pottery Experience</h3>
+                  <h3 className="tour-name">Koggala Lake and Stilt Fishing</h3>
                   <p className="lead mb-4">
-                    Weligama is a busy coastal city. It is well known for its beaches, seafood and marine ecology. However, in this walking tour, we unveil an unseen aspect of this coastal gem; culture.
+                    The coast is the lifeline of the Southern Province. In this tour, we take you on a life changing journey to prove that life in this island nation is not as easy as it seems to be.
                   </p>
                   
                   <p className="mb-4">
-                    Pottery has been one of the two life lines in Weligama. The roadside stalls full of earthenware would bear testimony for this. In this adventure, you get the chance to turn the Potter's wheel under the guidance Mr. Gunadasa, the legendary potter of Weligama. Inside the potter's hut you will witness the laborious process of mixing, molding, drying and painting; pretty much the full process of making an earthenware vessel. Get ready to make your own coffee cup or breakfast bowl!
+                    The luxurious and gourmet commodities from Ceylon have great untold stories behind them. We begin with the fishermen of the coast who are engaged in ceaseless battles to make a living. From fresh fish to salted dry fish, Southern fishing mirrors the authentic life of fishermen in Sri Lanka. You will witness different arts of fishing such as catamaran fishing, trawler fishing, line fishing and even the celebrated stilt fishing.
                   </p>
                   
                   <p className="mb-4">
-                    En route to our next destination, we meet the determined fishermen of Kapparatota who take a life risk to bring seafood to the table. You will also get the chance to have a quick walk in the fish market where different varieties of edible fish are sorted cleaned and sold. This is another opportunity to realize that Sri Lankans work hard for their bread and butter. The float ebbing to and fro in the bay is quite a scene and is considered as a very insta-worthy click.
+                    Passing a myriad of stalls on the roadside we drive down to Handunugoda Tea Museum and Plantation in Ahangama for a guided tour in a low country tea plantation. Here, you could experience the conventions of processing tea leaves and receive opportunity to taste over 35 varieties of hand crafted teas in the Tea Museum. Some quality tea and cakes are also included in the tour.
                   </p>
                   
                   <p className="mb-5">
-                    Kushtarajagala or the "healing statue" would be the next stop where we would stand beside a massive rock carving of 16 feet that belongs to the 6th century AD. Why not wish good health to your loved ones here!
-                  </p>
-
-                  <p className="mb-5">
-                    The tour ends with a drink of King Coconut or a boiled corn maize sold by the roadside vendors.
+                    The koggala lake is our next stop where we board Sam's boat to explore the Koggala lake that is home to many varities of birds mammals and reptiles including elusive crocodile. Koggala reflects a fine blend of sea and land that has been converted to livelihoods. In the Cinnamon Island, we find Sam's father who is preparing cinnamon for sale, from tree to bark. A cup of cinnamon tea awaits you.
                   </p>
                 </div>
 
                 {/* Call to Action */}
                 <div className="tour-cta mt-5 text-center">
-                  <h4>Ready to Experience the Art of Pottery?</h4>
-                  <p className="mb-4">Book your pottery experience today and discover the cultural heritage of Weligama.</p>
+                  <h4>Ready to Experience Traditional Stilt Fishing?</h4>
+                  <p className="mb-4">Book your Koggala Lake adventure today and witness one of Sri Lanka's most unique cultural traditions.</p>
                   <div className="d-flex justify-content-center gap-3 flex-wrap">
                     <button className="btn btn-primary btn-lg">
                       <i className="fas fa-calendar me-2"></i>
@@ -204,4 +200,4 @@ const PotteryTour = () => {
   );
 };
 
-export default PotteryTour;
+export default KoggalaTour;

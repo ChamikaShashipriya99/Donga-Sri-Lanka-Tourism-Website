@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const PotteryTour = () => {
+const KanneliyaTour = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const potteryImages = [
-    '/images/assets/pittery.jpeg',
-    '/images/assets/pittery1.jpeg',
-    '/images/assets/pittery2.jpeg'
+  const kanneliyaImages = [
+    '/images/assets/kanneliya.jpeg',
+    '/images/assets/kanneliya.jpeg', // Using the same image for now, you can add more later
+    '/images/assets/kanneliya1.jpeg'
   ];
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === potteryImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === kanneliyaImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? potteryImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? kanneliyaImages.length - 1 : prevIndex - 1
     );
   };
 
@@ -31,7 +31,7 @@ const PotteryTour = () => {
   }, []);
 
   return (
-    <div className="pottery-tour-page">
+    <div className="kanneliya-tour-page">
       {/* Tour Overview Section */}
       <section className="tour-overview py-5">
         <div className="container">
@@ -51,7 +51,7 @@ const PotteryTour = () => {
                   </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                  Pottery Experience
+                  Kanneliya Rainforest Trek
                 </li>
               </ol>
             </nav>
@@ -62,13 +62,13 @@ const PotteryTour = () => {
               <div className="overview-content">
                 <h2 className="section-title text-center mb-5">Tour Overview</h2>
                 
-                {/* Pottery Images Slider */}
-                <div className="pottery-images-slider mb-5">
+                {/* Kanneliya Images Slider */}
+                <div className="kanneliya-images-slider mb-5">
                   <div className="slider-wrapper position-relative">
                     <div className="slider-main">
                       <img 
-                        src={potteryImages[currentImageIndex]} 
-                        alt={`Pottery Experience ${currentImageIndex + 1}`}
+                        src={kanneliyaImages[currentImageIndex]} 
+                        alt={`Kanneliya Rainforest Trek ${currentImageIndex + 1}`}
                         className="img-fluid rounded shadow"
                         style={{ width: '100%', height: '400px', objectFit: 'cover' }}
                       />
@@ -133,7 +133,7 @@ const PotteryTour = () => {
                       gap: '8px',
                       zIndex: 10
                     }}>
-                      {potteryImages.map((_, index) => (
+                      {kanneliyaImages.map((_, index) => (
                         <button
                           key={index}
                           className={`dot ${index === currentImageIndex ? 'active' : ''}`}
@@ -154,32 +154,28 @@ const PotteryTour = () => {
                 </div>
                 
                 <div className="overview-text">
-                  <h3 className="tour-name">Pottery Experience</h3>
+                  <h3 className="tour-name">Kanneliya Rainforest Trek</h3>
                   <p className="lead mb-4">
-                    Weligama is a busy coastal city. It is well known for its beaches, seafood and marine ecology. However, in this walking tour, we unveil an unseen aspect of this coastal gem; culture.
+                    Kanneliya is one of our first ever sustainable tourism ventures where we partnered with local guides from the rainforest area. This includes female guides as well.
                   </p>
                   
                   <p className="mb-4">
-                    Pottery has been one of the two life lines in Weligama. The roadside stalls full of earthenware would bear testimony for this. In this adventure, you get the chance to turn the Potter's wheel under the guidance Mr. Gunadasa, the legendary potter of Weligama. Inside the potter's hut you will witness the laborious process of mixing, molding, drying and painting; pretty much the full process of making an earthenware vessel. Get ready to make your own coffee cup or breakfast bowl!
+                    In this easy trail we will be trekking through Kanneliya rainforest to reach Anagimala Ella, a magnificent waterfall which is also home to a variety of endemic aquatic species. The trail is soothing relaxing and rejuvenating because we expose our bodies to probably the freshest air and water in the island. The orchestra of the birds and crickets coupled with frolicking streams would quickly bring a sense of calm to the tired souls.
                   </p>
                   
                   <p className="mb-4">
-                    En route to our next destination, we meet the determined fishermen of Kapparatota who take a life risk to bring seafood to the table. You will also get the chance to have a quick walk in the fish market where different varieties of edible fish are sorted cleaned and sold. This is another opportunity to realize that Sri Lankans work hard for their bread and butter. The float ebbing to and fro in the bay is quite a scene and is considered as a very insta-worthy click.
+                    Back in our local guide's home, we sit down for a warm lunch prepared by his or her family using an endless list of ingredients such as ferns, yams, greens and, freshwater prawns. If you have a sweet tooth, there is a wide range of products made from the Kitul Tree, a member of the palm family that could be commonly seen in the rainforest areas. Kitul treacle and Jaggery tasting could be a memorable experience that you could only experience in Sri Lanka.
                   </p>
                   
                   <p className="mb-5">
-                    Kushtarajagala or the "healing statue" would be the next stop where we would stand beside a massive rock carving of 16 feet that belongs to the 6th century AD. Why not wish good health to your loved ones here!
-                  </p>
-
-                  <p className="mb-5">
-                    The tour ends with a drink of King Coconut or a boiled corn maize sold by the roadside vendors.
+                    On the way home, we drive through a green mosaic of tea and rubber plantations with pitstops here and there to have a peek into the lives of the locals. After all, life on this island is a paradox; a beautiful paradox that is poetic.
                   </p>
                 </div>
 
                 {/* Call to Action */}
                 <div className="tour-cta mt-5 text-center">
-                  <h4>Ready to Experience the Art of Pottery?</h4>
-                  <p className="mb-4">Book your pottery experience today and discover the cultural heritage of Weligama.</p>
+                  <h4>Ready to Experience Sustainable Rainforest Tourism?</h4>
+                  <p className="mb-4">Book your Kanneliya rainforest trek today and support community-based sustainable tourism in Sri Lanka.</p>
                   <div className="d-flex justify-content-center gap-3 flex-wrap">
                     <button className="btn btn-primary btn-lg">
                       <i className="fas fa-calendar me-2"></i>
@@ -204,4 +200,4 @@ const PotteryTour = () => {
   );
 };
 
-export default PotteryTour;
+export default KanneliyaTour;
