@@ -556,15 +556,16 @@ html {
   background: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   transition: var(--transition);
   border: 1px solid var(--border-color);
   height: 100%;
 }
 
 .featured-tour-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border-color: var(--primary-color);
 }
 
 .featured-tour-card img {
@@ -575,7 +576,7 @@ html {
 }
 
 .featured-tour-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .tour-info {
@@ -587,7 +588,21 @@ html {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  transition: var(--transition);
 }
+
+.featured-tour-card:hover .tour-info h4 {
+  color: var(--accent-color);
+}
+
+.featured-tour-card:hover .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+
 
 .tour-info p {
   color: var(--text-light);
@@ -597,10 +612,11 @@ html {
 }
 
 .tour-info .tour-price {
-  color: var(--accent-color);
+  color: var(--text-dark);
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 1rem;
+  transition: var(--transition);
 }
 
 /* Vision Page */

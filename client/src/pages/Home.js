@@ -201,8 +201,7 @@ const Home = () => {
                 <div className="tour-info">
                   <h4>Galle Fort Walking Tour</h4>
                   <p>Discover the historic Galle Fort with its ramparts, beaches, and vibrant businesses.</p>
-                  <div className="tour-price">$85 per head</div>
-                  <button className="btn btn-primary btn-sm">Learn More</button>
+                  <Link to="/galle-fort-tour" className="btn btn-primary btn-sm">Learn More</Link>
                 </div>
               </div>
             </div>
@@ -213,8 +212,7 @@ const Home = () => {
                 <div className="tour-info">
                   <h4>Sinharaja Rainforest Trek</h4>
                   <p>Explore Sri Lanka's largest rainforest, a UNESCO protected biodiversity site.</p>
-                  <div className="tour-price">$100 per head</div>
-                  <button className="btn btn-primary btn-sm">Learn More</button>
+                  <Link to="/sinharaja-tour" className="btn btn-primary btn-sm">Learn More</Link>
                 </div>
               </div>
             </div>
@@ -225,8 +223,7 @@ const Home = () => {
                 <div className="tour-info">
                   <h4>Koggala Lake & Stilt Fishing</h4>
                   <p>Experience traditional stilt fishing and explore the beautiful Koggala Lake.</p>
-                  <div className="tour-price">$80 per head</div>
-                  <button className="btn btn-primary btn-sm">Learn More</button>
+                  <Link to="/koggala-tour" className="btn btn-primary btn-sm">Learn More</Link>
                 </div>
               </div>
             </div>
