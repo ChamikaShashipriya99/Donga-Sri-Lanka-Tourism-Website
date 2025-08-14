@@ -19,8 +19,7 @@ const Vision = () => {
             playsInline
             preload="metadata"
           >
-            <source src="/videos/vision/vision.mp4" type="video/mp4" />
-            <source src="/videos/vision/Vision.mp4" type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/32614034/13908348_2560_1440_60fps.mp4" type="video/mp4" />
           </video>
           <div className="vision-hero-overlay"></div>
         </div>
