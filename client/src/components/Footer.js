@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  // PROTECTION SYSTEM FOR MAKER CREDIT
+  useEffect(() => {
+    const protectCredit = () => {
+      const creditLink = document.querySelector('.protected-credit-link');
+      const creditContainer = document.querySelector('.col-md-4:nth-child(2)');
+      
+      if (!creditLink || !creditContainer) {
+        console.warn('⚠️ PROTECTED CREDIT DETECTED AS MISSING - RESTORING...');
+        
+        // Restore the protected credit
+        const restoredCredit = `
+          <p style="margin: 0; color: #999999; font-size: 0.9rem;">
+            Made with <i class="fas fa-heart" style="color: #ff8c00; margin: 0 0.25rem;"></i> by 
+            <a href="https://github.com/ChamikaShashipriya99" target="_blank" rel="noopener noreferrer" 
+               style="color: #ff8c00; text-decoration: none; font-weight: 600; transition: color 0.3s ease;"
+               class="protected-credit-link" data-protected="true" data-developer="Chamika Shashipriya"
+               data-github="https://github.com/ChamikaShashipriya99" data-project="Donga Sri Lanka Tourism"
+               title="Protected Developer Credit - Do Not Remove">
+              Chamika Shashipriya
+            </a>
+          </p>
+        `;
+        
+        if (creditContainer) {
+          creditContainer.innerHTML = restoredCredit;
+          console.log('✅ PROTECTED CREDIT RESTORED SUCCESSFULLY');
+        }
+      }
+    };
+
+    // Check every 2 seconds
+    const protectionInterval = setInterval(protectCredit, 2000);
+    
+    // Also check on DOM changes
+    const observer = new MutationObserver(protectCredit);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      clearInterval(protectionInterval);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <footer className="footer" style={{
       backgroundColor: '#1a1a1a',
@@ -311,14 +354,53 @@ const Footer = () => {
           textAlign: 'center'
         }}>
           <div className="row align-items-center">
-            <div className="col-md-6" style={{ marginBottom: '1rem' }}>
+            <div className="col-md-4" style={{ marginBottom: '1rem' }}>
               <p style={{
                 margin: 0,
                 color: '#999999',
                 fontSize: '0.9rem'
               }}>&copy; 2024 Donga Sri Lanka. All rights reserved.</p>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4" style={{ marginBottom: '1rem' }}>
+              <p style={{
+                margin: 0,
+                color: '#999999',
+                fontSize: '0.9rem'
+              }}>
+                {/* PROTECTED MAKER CREDIT - DO NOT REMOVE */}
+                {/* 
+                  This credit line is protected by multiple security measures.
+                  Removing this credit violates the terms of use and may result in legal action.
+                  Developer: Chamika Shashipriya
+                  GitHub: https://github.com/ChamikaShashipriya99
+                  Project: Donga Sri Lanka Tourism Website
+                */}
+                Made with <i className="fas fa-heart" style={{ color: '#ff8c00', margin: '0 0.25rem' }}></i> by{' '}
+                <a 
+                  href="https://github.com/ChamikaShashipriya99" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{
+                    color: '#ff8c00',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    transition: 'color 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => e.target.style.color = '#e67e00'}
+                  onMouseLeave={(e) => e.target.style.color = '#ff8c00'}
+                  className="protected-credit-link"
+                  data-protected="true"
+                  data-developer="Chamika Shashipriya"
+                  data-github="https://github.com/ChamikaShashipriya99"
+                  data-project="Donga Sri Lanka Tourism"
+                  title="Protected Developer Credit - Do Not Remove"
+                >
+                  Chamika Shashipriya
+                </a>
+                {/* END PROTECTED MAKER CREDIT */}
+              </p>
+            </div>
+            <div className="col-md-4">
               <div className="language-selector" style={{
                 display: 'flex',
                 alignItems: 'center',
