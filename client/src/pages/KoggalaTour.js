@@ -30,6 +30,11 @@ const KoggalaTour = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="koggala-tour-page">
       {/* Tour Overview Section */}
