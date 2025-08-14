@@ -42,7 +42,7 @@ const Contact = () => {
             preload="metadata"
             poster="/images/assets/contact-fallback.jpg"
           >
-            <source src="/videos/contact/contact.mp4" type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/18993615/18993615-hd_1920_1080_50fps.mp4" type="video/mp4" />
           </video>
           <div className="contact-hero-overlay"></div>
         </div>
