@@ -388,8 +388,8 @@ const Home = () => {
             <div className="col-lg-6">
               <div className="row g-3">
                 <div className="col-6">
-                  <div className="image-container position-relative overflow-hidden rounded shadow-lg" style={{
-                    height: '200px',
+                  <div className="image-container position-relative overflow-hidden rounded shadow-lg homepage-image-float-1" style={{
+                    height: '280px',
                     transition: 'all 0.4s ease-in-out',
                     cursor: 'pointer'
                   }}>
@@ -420,7 +420,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="col-6">
-                  <div className="image-container position-relative overflow-hidden rounded shadow-lg" style={{
+                  <div className="image-container position-relative overflow-hidden rounded shadow-lg homepage-image-float-2" style={{
                     height: '200px',
                     transition: 'all 0.4s ease-in-out',
                     cursor: 'pointer'
@@ -452,7 +452,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="col-6">
-                  <div className="image-container position-relative overflow-hidden rounded shadow-lg" style={{
+                  <div className="image-container position-relative overflow-hidden rounded shadow-lg homepage-image-float-3" style={{
                     height: '200px',
                     transition: 'all 0.4s ease-in-out',
                     cursor: 'pointer'
@@ -484,8 +484,8 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="col-6">
-                  <div className="image-container position-relative overflow-hidden rounded shadow-lg" style={{
-                    height: '200px',
+                  <div className="image-container position-relative overflow-hidden rounded shadow-lg homepage-image-float-4" style={{
+                    height: '280px',
                     transition: 'all 0.4s ease-in-out',
                     cursor: 'pointer'
                   }}>
