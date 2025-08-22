@@ -71,17 +71,17 @@ const Navigation = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 style={{ color: '#ffffff', fontWeight: '500' }}
               >
-                About Us
+                The Team
               </Link>
             </li>
             <li className="nav-item">
               <Link 
-                className={`nav-link ${isActive('/vision') ? 'active' : ''}`} 
-                to="/vision"
+                className={`nav-link ${isActive('/kussi-specials') ? 'active' : ''}`} 
+                to="/kussi-specials"
                 onClick={() => setIsMobileMenuOpen(false)}
                 style={{ color: '#ffffff', fontWeight: '500' }}
               >
-                Vision
+                Kussi Specials
               </Link>
             </li>
             <li className="nav-item">
@@ -92,6 +92,16 @@ const Navigation = () => {
                 style={{ color: '#ffffff', fontWeight: '500' }}
               >
                 Contact Us
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                className={`nav-link ${isActive('/blog') ? 'active' : ''}`} 
+                to="/blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{ color: '#ffffff', fontWeight: '500' }}
+              >
+                Blog
               </Link>
             </li>
           </ul>
