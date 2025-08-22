@@ -10,26 +10,9 @@ const Tours = () => {
   const navigate = useNavigate();
 
   const handleViewDetails = (tour) => {
-    if (tour.id === 1) { // Galle Fort Tour
-      navigate('/galle-fort-tour');
-    } else if (tour.id === 2) { // Pottery Experience Tour
-      navigate('/pottery-tour');
-    } else if (tour.id === 3) { // Moonstone and Waterfall Tour
-      navigate('/moonstone-tour');
-    } else if (tour.id === 4) { // Kalametiya Mulkirigala
-      navigate('/kalametiya-tour');
-    } else if (tour.id === 5) { // Brief Garden and Eco Star
-      navigate('/brief-garden-tour');
-    } else if (tour.id === 6) { // Sinharaja Rainforest Trek
-      navigate('/sinharaja-tour');
-    } else if (tour.id === 7) { // Kanneliya Rainforest Trek
-      navigate('/kanneliya-tour');
-    } else if (tour.id === 8) { // Koggala Lake and Stilt Fishing
-      navigate('/koggala-tour');
-    } else {
-      setSelectedTour(tour);
-      setShowTourModal(true);
-    }
+    // For now, show modal for all tours since we don't have individual pages for these
+    setSelectedTour(tour);
+    setShowTourModal(true);
   };
 
   const closeTourModal = () => {
@@ -68,91 +51,81 @@ const Tours = () => {
   const tours = [
     {
       id: 1,
-      title: "Galle Fort Walking Tour",
-      description: "Galle Fort is everybody's go-to destination when they are in Galle. The ramparts beaches, myriad of vibrant businesses and rich history make it a must-visit location.",
-      price: "$85",
+      title: "Booze Cruise - The Spirits Culture Tour",
+      description: "From Arrack to Kitul Toddy and Lion Beer to Baila Songs, immerse in the vibrant spirits culture of Sri Lanka. Search for elusive plant based liquors, sit at ages-old bars, nibble some of the spiciest bar snacks and dance into some baila tunes. This tour is certainly not for the faint-hearted.",
+      price: "$120",
       priceNote: "Per head upwards",
-      image: '/images/assets/gallefort.jpg',
-      duration: "Half Day",
-      difficulty: "Easy",
-      highlights: ["Historical Fort", "Beach Views", "Local Businesses", "Cultural Heritage"]
+      image: '/images/assets/gallefort.jpg', // Using existing image as placeholder
+      duration: "4-6 hours",
+      difficulty: "Moderate",
+      locations: ["Negombo", "Colombo", "Galle", "Sinharaja", "Jaffna"],
+      mealPlan: "Drinks and Bar snacks + Lunch or Dinner",
+      highlights: ["Spirits Culture", "Traditional Bars", "Baila Music", "Local Cuisine", "Cultural Experience"]
     },
     {
       id: 2,
-      title: "Pottery Experience",
-      description: "Weligama is a busy coastal city. It is well known for its beaches, seafood and marine ecology. However, the traditional pottery craftsmanship here is equally fascinating.",
-      price: "$85",
+      title: "Nature's Pantry - The Foraging Tour",
+      description: "Nature is the best pantry as well as the best pharmacy. In this adventure, you would be searching various nooks and corners for lesser known greens, edible forest fruits, fish and meats, spices and condiments with a local foraging expert to cook your breakfast, lunch and dinner.",
+      price: "$150",
       priceNote: "Per head upwards",
-      image: '/images/assets/pittery.jpeg',
-      duration: "Half Day",
-      difficulty: "Easy",
-      highlights: ["Traditional Pottery", "Hands-on Experience", "Local Craftsmanship", "Cultural Learning"]
+      image: '/images/assets/sinharaja.jpeg', // Using existing image as placeholder
+      duration: "1 Full Day",
+      difficulty: "Moderate",
+      locations: ["Kudawa rainforest village", "Hasalaka Hills", "Tank country of Anuradhapura", "Colonial City of Galle", "Jaffna - Little India"],
+      mealPlan: "BLD with Tea and Drinks",
+      highlights: ["Foraging Experience", "Local Expert Guide", "Wild Edibles", "Cooking Experience", "Nature Exploration"]
     },
     {
       id: 3,
-      title: "Moonstone and Waterfall",
-      description: "Moonstones are considered as stones of good luck, health and longevity. However, the story of surfacing a moonstone and the beautiful waterfalls in the area create a magical experience.",
-      price: "$90",
+      title: "Eat Street - Sri Lanka's Street Food Tour",
+      description: "As the sun begins to set and men start rallying around bar counters, the streets come alive with the aromas of creative and quickfire Sri Lankan streetfood. Be prepared to be ravished by spices, coconut oil and roadside vendors. Nota Bene: Always listen to your local guide or prepare to pack your bags.",
+      price: "$80",
       priceNote: "Per head upwards",
-      image: '/images/assets/moonstone.jpeg',
-      duration: "Full Day",
-      difficulty: "Moderate",
-      highlights: ["Moonstone Mining", "Waterfall Views", "Natural Beauty", "Spiritual Significance"]
+      image: '/images/assets/koggala.jpeg', // Using existing image as placeholder
+      duration: "3-4 hours",
+      difficulty: "Easy",
+      locations: ["Colombo", "Galle", "Negombo", "Arugambay", "Trincomalee", "Jaffna", "Kandy", "Ella"],
+      mealPlan: "All you can eat street food, tea and fizzy drinks",
+      highlights: ["Street Food", "Local Vendors", "Cultural Experience", "Evening Tour", "Authentic Cuisine"]
     },
     {
       id: 4,
-      title: "Kalametiya Mulkirigala",
-      description: "Hambantota is the largest district of the Southern Province. Hot climate, rare geographical formations and the food culture are unique to this region.",
-      price: "$90",
+      title: "Nenda Cooks - The typical Sri Lankan cookery class",
+      description: "Italy's got their Nonas and we have our Nendas. With culinary wisdom passed down from generations, they cook some of the best meals in the island. Go to market, bargain like a Nenda and cook a Sri Lankan feast in our very own clay pots.",
+      price: "$100",
       priceNote: "Per head upwards",
-      image: '/images/assets/Kalametiya.jpeg',
-      duration: "Full Day",
-      difficulty: "Moderate",
-      highlights: ["Geological Formations", "Local Cuisine", "Cultural Heritage", "Natural Landscapes"]
+      image: '/images/assets/pittery.jpeg', // Using existing image as placeholder
+      duration: "3-6 hours",
+      difficulty: "Easy",
+      locations: ["Islandwide"],
+      mealPlan: "Lunch and/or Dinner",
+      highlights: ["Cooking Class", "Traditional Recipes", "Market Visit", "Clay Pot Cooking", "Cultural Learning"]
     },
     {
       id: 5,
-      title: "Brief Garden and Eco Star",
-      description: "Bentota is not only about the beach! It has more to offer for those who love landscaping, gardening, and eco-friendly experiences.",
-      price: "$90",
+      title: "The Melting Pot - Dishes from other ethnicities in Sri Lanka",
+      description: "A tour that celebrates the diversity of Sri Lanka through gastronomy. Walk into the warm hospitality of sweet hindu and islamic communities, sing and drink with the christians, dance with the Burghers and talk of peace.",
+      price: "$130",
       priceNote: "Per head upwards",
-      image: '/images/assets/briefgarden.jpeg',
-      duration: "Half Day",
+      image: '/images/assets/moonstone.jpeg', // Using existing image as placeholder
+      duration: "Full day or 6-8 hours",
       difficulty: "Easy",
-      highlights: ["Botanical Gardens", "Eco Tourism", "Landscaping", "Nature Walks"]
+      locations: ["Negombo", "Colombo", "Galle", "Nuwara Eliya"],
+      mealPlan: "Full day or Two main meals with Tea and snacks",
+      highlights: ["Cultural Diversity", "Multi-Ethnic Cuisine", "Community Interaction", "Traditional Hospitality", "Peace Building"]
     },
     {
       id: 6,
-      title: "Sinharaja Rainforest Trek",
-      description: "Sinharaja is Sri Lanka's largest rainforest. It is a UNESCO protected bio-diversity site which is rich in virgin water springs and unique wildlife.",
-      price: "$100",
+      title: "Mega Kitchens - The Festival Food of Sri Lanka",
+      description: "No matter what we believe as a religion or philosophy, we LOVE our food and festivals. Everyday is a day to celebrate in Sri Lanka. Dive into the mega kitchens of Sri Lanka that serve hundreds at once and see what keeps them going.",
+      price: "$90",
       priceNote: "Per head upwards",
-      image: '/images/assets/sinharaja.jpeg',
-      duration: "Full Day",
-      difficulty: "Challenging",
-      highlights: ["UNESCO Site", "Biodiversity", "Water Springs", "Wildlife Spotting"]
-    },
-    {
-      id: 7,
-      title: "Kanneliya Rainforest Trek",
-      description: "Kanneliya is one of our first ever sustainable tourism ventures where we partnered with local guides from the rainforest area to provide authentic experiences.",
-      price: "$100",
-      priceNote: "Per head upwards",
-      image: '/images/assets/kanneliya.jpeg',
-      duration: "Full Day",
-      difficulty: "Challenging",
-      highlights: ["Sustainable Tourism", "Local Guides", "Rainforest Trek", "Community Partnership"]
-    },
-    {
-      id: 8,
-      title: "Koggala Lake and Stilt Fishing",
-      description: "The coast is the lifeline of the Southern Province. In this tour, we take you on a life changing experience of traditional stilt fishing and lake exploration.",
-      price: "$80",
-      priceNote: "Per head upwards",
-      image: '/images/assets/koggala.jpeg',
-      duration: "Half Day",
+      image: '/images/assets/briefgarden.jpeg', // Using existing image as placeholder
+      duration: "Half day",
       difficulty: "Easy",
-      highlights: ["Stilt Fishing", "Lake Views", "Traditional Methods", "Coastal Culture"]
+      locations: ["Islandwide"],
+      mealPlan: "One or two of the main meals and drinks",
+      highlights: ["Festival Food", "Mega Kitchens", "Cultural Celebrations", "Traditional Cooking", "Community Feasts"]
     }
   ];
 
@@ -242,9 +215,30 @@ const Tours = () => {
                     <h3 className="tour-title">{tour.title}</h3>
                     <p className="tour-description">{tour.description}</p>
                     
-
-
-
+                    <div className="tour-meta">
+                      <div className="meta-item">
+                        <i className="fas fa-clock me-2"></i>
+                        <span>{tour.duration}</span>
+                      </div>
+                      <div className="meta-item">
+                        <i className="fas fa-mountain me-2"></i>
+                        <span>{tour.difficulty}</span>
+                      </div>
+                    </div>
+                    
+                    {tour.locations && (
+                      <div className="tour-locations">
+                        <h6><i className="fas fa-map-marker-alt me-2"></i>Locations:</h6>
+                        <p className="locations-text">{tour.locations.join(', ')}</p>
+                      </div>
+                    )}
+                    
+                    {tour.mealPlan && (
+                      <div className="tour-meal-plan">
+                        <h6><i className="fas fa-utensils me-2"></i>Meal Plan:</h6>
+                        <p className="meal-plan-text">{tour.mealPlan}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -303,6 +297,20 @@ const Tours = () => {
                     <span>{selectedTour.price} {selectedTour.priceNote}</span>
                   </div>
                 </div>
+                
+                {selectedTour.locations && (
+                  <div className="tour-modal-locations">
+                    <h5><i className="fas fa-map-marker-alt me-2"></i>Locations:</h5>
+                    <p>{selectedTour.locations.join(', ')}</p>
+                  </div>
+                )}
+                
+                {selectedTour.mealPlan && (
+                  <div className="tour-modal-meal-plan">
+                    <h5><i className="fas fa-utensils me-2"></i>Meal Plan:</h5>
+                    <p>{selectedTour.mealPlan}</p>
+                  </div>
+                )}
                 <div className="tour-modal-highlights">
                   <h5>Highlights:</h5>
                   <ul className="highlights-list">

@@ -61,7 +61,7 @@ const Navigation = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 style={{ color: '#ffffff', fontWeight: '500' }}
               >
-                Tours
+                Signature Food Ventures
               </Link>
             </li>
             <li className="nav-item">

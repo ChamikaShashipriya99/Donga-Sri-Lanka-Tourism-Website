@@ -33,6 +33,7 @@ html {
 /* Navigation Styles */
 .navbar {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 15px rgba(0,0,0,0.3);
   transition: var(--transition);
@@ -300,6 +301,100 @@ html {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Tour Content Styles */
+.tour-content {
+  padding: 20px;
+}
+
+.tour-title {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.tour-description {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.tour-meta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tour-meta .meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.tour-meta .meta-item i {
+  color: var(--primary-color);
+  margin-right: 8px;
+  width: 16px;
+}
+
+.tour-locations, .tour-meal-plan {
+  margin-bottom: 15px;
+}
+
+.tour-locations h6, .tour-meal-plan h6 {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.tour-locations h6 i, .tour-meal-plan h6 i {
+  margin-right: 8px;
+  width: 16px;
+}
+
+.locations-text, .meal-plan-text {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive Tour Cards */
+@media (max-width: 768px) {
+  .tour-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .tour-locations, .tour-meal-plan {
+    margin-bottom: 12px;
+  }
+  
+  .tour-locations h6, .tour-meal-plan h6 {
+    font-size: 0.85rem;
+  }
+  
+  .locations-text, .meal-plan-text {
+    font-size: 0.8rem;
+  }
+  
+  .tour-modal-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .tour-modal-image {
+    height: 250px;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
 /* Tour Modal Styles */
 .tour-modal-overlay {
   position: fixed;
@@ -426,6 +521,30 @@ html {
   align-items: center;
   margin-bottom: 10px;
   color: #555;
+}
+
+.tour-modal-locations, .tour-modal-meal-plan {
+  margin-bottom: 25px;
+}
+
+.tour-modal-locations h5, .tour-modal-meal-plan h5 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.tour-modal-locations h5 i, .tour-modal-meal-plan h5 i {
+  margin-right: 8px;
+  width: 20px;
+}
+
+.tour-modal-locations p, .tour-modal-meal-plan p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .tour-modal-actions {
