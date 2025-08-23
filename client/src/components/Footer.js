@@ -271,20 +271,24 @@ const Footer = () => {
               margin: 0
             }}>
               {[
-                'Galle Fort Walking Tour',
-                'Sinharaja Rainforest Trek',
-                'Koggala Lake & Stilt Fishing',
-                'Moonstone and Waterfall',
-                'Pottery Experience'
+                'Booze Cruise',
+                'Nature\'s Pantry',
+                'Eat Street',
+                'Nenda Cooks',
+                'The Melting Pot',
+                'Mega Kitchens'
               ].map((tour, index) => (
                 <li key={index} style={{ 
                   marginBottom: '0.75rem',
                   color: '#cccccc',
                   display: 'flex',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis'
                 }}>
-                  <i className="fas fa-map-pin me-2" style={{ color: '#ff8c00', fontSize: '0.8rem' }}></i>
-                  {tour}
+                  <i className="fas fa-map-pin me-2" style={{ color: '#ff8c00', fontSize: '0.8rem', flexShrink: '0' }}></i>
+                  <span style={{ flex: '1', minWidth: '0' }}>{tour}</span>
                 </li>
               ))}
             </ul>
