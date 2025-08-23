@@ -5,6 +5,7 @@ const Blog = () => {
   const videoRef = useRef(null);
   const [videoLoading, setVideoLoading] = useState(true);
   const [videoError, setVideoError] = useState(false);
+  const [featuredVideoLoading, setFeaturedVideoLoading] = useState(true);
   const [youtubeVideos, setYoutubeVideos] = useState([]);
   const [youtubeLoading, setYoutubeLoading] = useState(true);
   const [youtubeError, setYoutubeError] = useState(false);
@@ -79,25 +80,124 @@ const Blog = () => {
         // Fallback: Show some sample videos if API fails
         setYoutubeVideos([
           {
-            id: { videoId: 'sample1' },
+            id: { videoId: 'fExDKV-b_YY' },
             snippet: {
-              title: 'Sample Donga Video 1',
-              description: 'This is a sample video description',
+              title: 'Donga Experience Video 1',
+              description: 'Experience the magic of Donga through our amazing content',
               thumbnails: {
-                medium: { url: 'https://via.placeholder.com/320x180/2c5aa0/ffffff?text=Donga+Video+1' }
+                medium: { url: `https://img.youtube.com/vi/fExDKV-b_YY/mqdefault.jpg` }
               },
               publishedAt: '2024-01-01T00:00:00Z'
             }
           },
           {
-            id: { videoId: 'sample2' },
+            id: { videoId: '_JFHok5XUgE' },
             snippet: {
-              title: 'Sample Donga Video 2',
-              description: 'Another sample video description',
+              title: 'Donga Experience Video 2',
+              description: 'Discover the unique blend of culinary excellence and cultural richness',
               thumbnails: {
-                medium: { url: 'https://via.placeholder.com/320x180/ff6b35/ffffff?text=Donga+Video+2' }
+                medium: { url: `https://img.youtube.com/vi/_JFHok5XUgE/mqdefault.jpg` }
               },
               publishedAt: '2024-01-02T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: 'YFsNX81bQ8c' },
+            snippet: {
+              title: 'Donga Experience Video 3',
+              description: 'Every Donga journey is unforgettable and unique',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/YFsNX81bQ8c/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-03T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: '7s_2ZEfVbt8' },
+            snippet: {
+              title: 'Donga Experience Video 4',
+              description: 'Join us on an adventure through Sri Lanka\'s culinary world',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/7s_2ZEfVbt8/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-04T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: '_R52FBRD9Eo' },
+            snippet: {
+              title: 'Donga Experience Video 5',
+              description: 'Stories, insights, and adventures await you',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/_R52FBRD9Eo/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-05T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: 'T1ueLmJS63Y' },
+            snippet: {
+              title: 'Donga Experience Video 6',
+              description: 'Explore the rich culture and traditions of Sri Lanka',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/T1ueLmJS63Y/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-06T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: 'YozMg_dIjN0' },
+            snippet: {
+              title: 'Donga Experience Video 7',
+              description: 'Immerse yourself in authentic local experiences',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/YozMg_dIjN0/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-07T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: 'BbUgIUmKbQA' },
+            snippet: {
+              title: 'Donga Experience Video 8',
+              description: 'From street food to fine dining, discover it all',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/BbUgIUmKbQA/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-08T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: 'UAGUEvwGfRw' },
+            snippet: {
+              title: 'Donga Experience Video 9',
+              description: 'Connect with local communities and traditions',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/UAGUEvwGfRw/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-09T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: 'aEZKC7EjXbs' },
+            snippet: {
+              title: 'Donga Experience Video 10',
+              description: 'Experience the warmth and hospitality of Sri Lanka',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/aEZKC7EjXbs/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-10T00:00:00Z'
+            }
+          },
+          {
+            id: { videoId: 'l2s9P3BLngo' },
+            snippet: {
+              title: 'Donga Experience Video 11',
+              description: 'Create memories that will last a lifetime',
+              thumbnails: {
+                medium: { url: `https://img.youtube.com/vi/l2s9P3BLngo/mqdefault.jpg` }
+              },
+              publishedAt: '2024-01-11T00:00:00Z'
             }
           }
         ]);
@@ -112,25 +212,124 @@ const Blog = () => {
       // Show sample videos if no API key
       setYoutubeVideos([
         {
-          id: { videoId: 'sample1' },
+          id: { videoId: 'fExDKV-b_YY' },
           snippet: {
-            title: 'Sample Donga Video 1',
-            description: 'This is a sample video description',
+            title: 'Donga Experience Video 1',
+            description: 'Experience the magic of Donga through our amazing content',
             thumbnails: {
-              medium: { url: 'https://via.placeholder.com/320x180/2c5aa0/ffffff?text=Donga+Video+1' }
+              medium: { url: `https://img.youtube.com/vi/fExDKV-b_YY/mqdefault.jpg` }
             },
             publishedAt: '2024-01-01T00:00:00Z'
           }
         },
         {
-          id: { videoId: 'sample2' },
+          id: { videoId: '_JFHok5XUgE' },
           snippet: {
-            title: 'Sample Donga Video 2',
-            description: 'Another sample video description',
+            title: 'Donga Experience Video 2',
+            description: 'Discover the unique blend of culinary excellence and cultural richness',
             thumbnails: {
-              medium: { url: 'https://via.placeholder.com/320x180/ff6b35/ffffff?text=Donga+Video+2' }
+              medium: { url: `https://img.youtube.com/vi/_JFHok5XUgE/mqdefault.jpg` }
             },
             publishedAt: '2024-01-02T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: 'YFsNX81bQ8c' },
+          snippet: {
+            title: 'Donga Experience Video 3',
+            description: 'Every Donga journey is unforgettable and unique',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/YFsNX81bQ8c/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-03T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: '7s_2ZEfVbt8' },
+          snippet: {
+            title: 'Donga Experience Video 4',
+            description: 'Join us on an adventure through Sri Lanka\'s culinary world',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/7s_2ZEfVbt8/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-04T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: '_R52FBRD9Eo' },
+          snippet: {
+            title: 'Donga Experience Video 5',
+            description: 'Stories, insights, and adventures await you',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/_R52FBRD9Eo/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-05T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: 'T1ueLmJS63Y' },
+          snippet: {
+            title: 'Donga Experience Video 6',
+            description: 'Explore the rich culture and traditions of Sri Lanka',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/T1ueLmJS63Y/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-06T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: 'YozMg_dIjN0' },
+          snippet: {
+            title: 'Donga Experience Video 7',
+            description: 'Immerse yourself in authentic local experiences',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/YozMg_dIjN0/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-07T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: 'BbUgIUmKbQA' },
+          snippet: {
+            title: 'Donga Experience Video 8',
+            description: 'From street food to fine dining, discover it all',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/BbUgIUmKbQA/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-08T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: 'UAGUEvwGfRw' },
+          snippet: {
+            title: 'Donga Experience Video 9',
+            description: 'Connect with local communities and traditions',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/UAGUEvwGfRw/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-09T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: 'aEZKC7EjXbs' },
+          snippet: {
+            title: 'Donga Experience Video 10',
+            description: 'Experience the warmth and hospitality of Sri Lanka',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/aEZKC7EjXbs/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-10T00:00:00Z'
+          }
+        },
+        {
+          id: { videoId: 'l2s9P3BLngo' },
+          snippet: {
+            title: 'Donga Experience Video 11',
+            description: 'Create memories that will last a lifetime',
+            thumbnails: {
+              medium: { url: `https://img.youtube.com/vi/l2s9P3BLngo/mqdefault.jpg` }
+            },
+            publishedAt: '2024-01-11T00:00:00Z'
           }
         }
       ]);
@@ -156,7 +355,7 @@ const Blog = () => {
   };
 
   const openYouTubeVideo = (videoId) => {
-    if (videoId && videoId !== 'sample1' && videoId !== 'sample2') {
+    if (videoId) {
       window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
     }
   };
@@ -213,6 +412,84 @@ const Blog = () => {
               <p className="section-subtitle text-white">
                 Stories, insights, and adventures from Sri Lanka's culinary world
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Video Section */}
+      <section className="featured-video-section py-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center mb-5">
+              <h2 className="section-title">Featured Video</h2>
+              <p className="section-subtitle">
+                Check out our latest featured content
+              </p>
+            </div>
+          </div>
+          
+          <div className="row justify-content-center">
+            <div className="col-lg-8 col-md-10">
+              <div className="featured-video-card">
+                <div className="video-embed-container">
+                  {featuredVideoLoading && (
+                    <div className="featured-video-loading">
+                      <div className="spinner-border text-light" role="status">
+                        <span className="visually-hidden">Loading featured video...</span>
+                      </div>
+                      <p className="text-light mt-2">Loading featured video...</p>
+                    </div>
+                  )}
+                  <iframe
+                    src="https://www.youtube.com/embed/5MtzvVkbcRo"
+                    title="Featured Donga Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="featured-video-iframe"
+                    onLoad={() => setFeaturedVideoLoading(false)}
+                    style={{ display: featuredVideoLoading ? 'none' : 'block' }}
+                  ></iframe>
+                </div>
+                <div className="video-info p-4">
+                  <h3 className="video-title mb-3">Featured Donga Experience</h3>
+                  <p className="video-description">
+                    Experience the magic of Donga through our featured video. Discover the unique blend of 
+                    culinary excellence and cultural richness that makes every Donga journey unforgettable.
+                  </p>
+                  <div className="video-actions mt-3">
+                    <a 
+                      href="https://www.youtube.com/watch?v=5MtzvVkbcRo" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn btn-primary me-3"
+                    >
+                      <i className="fab fa-youtube me-2"></i>
+                      Watch on YouTube
+                    </a>
+                    <button 
+                      className="btn btn-outline-primary"
+                      onClick={() => {
+                        if (navigator.share) {
+                          navigator.share({
+                            title: 'Featured Donga Video',
+                            text: 'Check out this amazing Donga experience!',
+                            url: 'https://www.youtube.com/watch?v=5MtzvVkbcRo'
+                          });
+                        } else {
+                          // Fallback for browsers that don't support Web Share API
+                          navigator.clipboard.writeText('https://www.youtube.com/watch?v=5MtzvVkbcRo');
+                          alert('Video link copied to clipboard!');
+                        }
+                      }}
+                    >
+                      <i className="fas fa-share me-2"></i>
+                      Share Video
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
