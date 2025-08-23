@@ -5,20 +5,14 @@ const Tours = () => {
   const videoRef = useRef(null);
   const [videoLoading, setVideoLoading] = useState(true);
   const [videoError, setVideoError] = useState(false);
-  const [selectedTour, setSelectedTour] = useState(null);
-  const [showTourModal, setShowTourModal] = useState(false);
   const navigate = useNavigate();
 
   const handleViewDetails = (tour) => {
-    // For now, show modal for all tours since we don't have individual pages for these
-    setSelectedTour(tour);
-    setShowTourModal(true);
+    // Navigate to tour details page
+    navigate(`/tour/${tour.id}`);
   };
 
-  const closeTourModal = () => {
-    setShowTourModal(false);
-    setSelectedTour(null);
-  };
+
 
   useEffect(() => {
     const video = videoRef.current;
@@ -68,7 +62,7 @@ const Tours = () => {
       description: "Nature is the best pantry as well as the best pharmacy. In this adventure, you would be searching various nooks and corners for lesser known greens, edible forest fruits, fish and meats, spices and condiments with a local foraging expert to cook your breakfast, lunch and dinner.",
       price: "$150",
       priceNote: "Per head upwards",
-      image: '/images/assets/sinharaja.jpeg', // Using existing image as placeholder
+      image: '/images/naturespantry/497401700_24019237757689242_3132255596382340986_n.jpg',
       duration: "1 Full Day",
       difficulty: "Moderate",
       locations: ["Kudawa rainforest village", "Hasalaka Hills", "Tank country of Anuradhapura", "Colonial City of Galle", "Jaffna - Little India"],
@@ -81,7 +75,7 @@ const Tours = () => {
       description: "As the sun begins to set and men start rallying around bar counters, the streets come alive with the aromas of creative and quickfire Sri Lankan streetfood. Be prepared to be ravished by spices, coconut oil and roadside vendors. Nota Bene: Always listen to your local guide or prepare to pack your bags.",
       price: "$80",
       priceNote: "Per head upwards",
-      image: '/images/assets/koggala.jpeg', // Using existing image as placeholder
+      image: '/images/eatstreet/eatstreet7.jpg',
       duration: "3-4 hours",
       difficulty: "Easy",
       locations: ["Colombo", "Galle", "Negombo", "Arugambay", "Trincomalee", "Jaffna", "Kandy", "Ella"],
@@ -94,7 +88,7 @@ const Tours = () => {
       description: "Italy's got their Nonas and we have our Nendas. With culinary wisdom passed down from generations, they cook some of the best meals in the island. Go to market, bargain like a Nenda and cook a Sri Lankan feast in our very own clay pots.",
       price: "$100",
       priceNote: "Per head upwards",
-      image: '/images/assets/pittery.jpeg', // Using existing image as placeholder
+      image: '/images/nendacooks/nendacooks4.jpg',
       duration: "3-6 hours",
       difficulty: "Easy",
       locations: ["Islandwide"],
@@ -107,7 +101,7 @@ const Tours = () => {
       description: "A tour that celebrates the diversity of Sri Lanka through gastronomy. Walk into the warm hospitality of sweet hindu and islamic communities, sing and drink with the christians, dance with the Burghers and talk of peace.",
       price: "$130",
       priceNote: "Per head upwards",
-      image: '/images/assets/moonstone.jpeg', // Using existing image as placeholder
+      image: '/images/themeltingpot/themeltingpot2.jpg',
       duration: "Full day or 6-8 hours",
       difficulty: "Easy",
       locations: ["Negombo", "Colombo", "Galle", "Nuwara Eliya"],
@@ -120,7 +114,7 @@ const Tours = () => {
       description: "No matter what we believe as a religion or philosophy, we LOVE our food and festivals. Everyday is a day to celebrate in Sri Lanka. Dive into the mega kitchens of Sri Lanka that serve hundreds at once and see what keeps them going.",
       price: "$90",
       priceNote: "Per head upwards",
-      image: '/images/assets/briefgarden.jpeg', // Using existing image as placeholder
+      image: '/images/megakitchens/megakitchens.jpg',
       duration: "Half day",
       difficulty: "Easy",
       locations: ["Islandwide"],
@@ -269,74 +263,7 @@ const Tours = () => {
         </div>
       </section>
 
-      {/* Tour Details Modal */}
-      {showTourModal && selectedTour && (
-        <div className="tour-modal-overlay" onClick={closeTourModal}>
-          <div className="tour-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="tour-modal-close" onClick={closeTourModal}>
-              <i className="fas fa-times"></i>
-            </button>
-            <div className="tour-modal-content">
-              <div className="tour-modal-image">
-                <img src={selectedTour.image} alt={selectedTour.title} />
-              </div>
-              <div className="tour-modal-details">
-                <h2>{selectedTour.title}</h2>
-                <p className="tour-modal-description">{selectedTour.description}</p>
-                <div className="tour-modal-meta">
-                  <div className="meta-item">
-                    <i className="fas fa-clock me-2"></i>
-                    <span>{selectedTour.duration}</span>
-                  </div>
-                  <div className="meta-item">
-                    <i className="fas fa-mountain me-2"></i>
-                    <span>{selectedTour.difficulty}</span>
-                  </div>
-                  <div className="meta-item">
-                    <i className="fas fa-dollar-sign me-2"></i>
-                    <span>{selectedTour.price} {selectedTour.priceNote}</span>
-                  </div>
-                </div>
-                
-                {selectedTour.locations && (
-                  <div className="tour-modal-locations">
-                    <h5><i className="fas fa-map-marker-alt me-2"></i>Locations:</h5>
-                    <p>{selectedTour.locations.join(', ')}</p>
-                  </div>
-                )}
-                
-                {selectedTour.mealPlan && (
-                  <div className="tour-modal-meal-plan">
-                    <h5><i className="fas fa-utensils me-2"></i>Meal Plan:</h5>
-                    <p>{selectedTour.mealPlan}</p>
-                  </div>
-                )}
-                <div className="tour-modal-highlights">
-                  <h5>Highlights:</h5>
-                  <ul className="highlights-list">
-                    {selectedTour.highlights.map((highlight, index) => (
-                      <li key={index}>
-                        <i className="fas fa-check me-2 text-success"></i>
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="tour-modal-actions">
-                  <button className="btn btn-primary btn-lg me-3">
-                    <i className="fas fa-calendar me-2"></i>
-                    Book This Tour
-                  </button>
-                  <button className="btn btn-outline-primary btn-lg">
-                    <i className="fas fa-info-circle me-2"></i>
-                    More Info
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+
     </div>
   );
 };

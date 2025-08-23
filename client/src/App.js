@@ -7,6 +7,7 @@ import './App.css';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Tours from './pages/Tours';
+import TourDetails from './pages/TourDetails';
 import About from './pages/About';
 import KussiSpecials from './pages/KussiSpecials';
 import Blog from './pages/Blog';
@@ -28,6 +29,11 @@ function AnimatedRoutes() {
         <Route path="/tours" element={
           <PageTransition>
             <Tours />
+          </PageTransition>
+        } />
+        <Route path="/tour/:tourId" element={
+          <PageTransition>
+            <TourDetails />
           </PageTransition>
         } />
         <Route path="/about" element={
