@@ -4,12 +4,25 @@ const KussiSpecials = () => {
   const videoRef = useRef(null);
   const [videoLoading, setVideoLoading] = useState(true);
   const [videoError, setVideoError] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const scenicOutdoorCookingImages = [
+    "/images/scenicoutdoorcooking/scenicoutdoorcooking1.jpg",
+    "/images/scenicoutdoorcooking/scenicoutdoorcooking2.jpg",
+    "/images/scenicoutdoorcooking/scenicoutdoorcooking3.jpg",
+    "/images/scenicoutdoorcooking/scenicoutdoorcooking4.jpg",
+    "/images/scenicoutdoorcooking/scenicoutdoorcooking5.jpg",
+    "/images/scenicoutdoorcooking/scenicoutdoorcooking6.jpg",
+    "/images/scenicoutdoorcooking/scenicoutdoorcooking7.jpg"
+  ];
 
   const specialExperiences = [
     {
       id: 1,
       title: "Scenic Outdoor Cooking",
-      image: "/images/assets/briefgarden.jpeg"
+      image: "/images/scenicoutdoorcooking/scenicoutdoorcooking3.jpg",
+      hasGallery: true
     },
     {
       id: 2,
@@ -42,6 +55,51 @@ const KussiSpecials = () => {
       image: "/images/assets/kalametiya.jpeg"
     }
   ];
+
+  const openGallery = () => {
+    setShowGallery(true);
+    setCurrentImageIndex(0);
+  };
+
+  const closeGallery = () => {
+    setShowGallery(false);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === scenicOutdoorCookingImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? scenicOutdoorCookingImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToImage = (index) => {
+    setCurrentImageIndex(index);
+  };
+
+  // Close gallery on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeGallery();
+      }
+    };
+
+    if (showGallery) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [showGallery]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -117,7 +175,10 @@ const KussiSpecials = () => {
                   <div className="experience-image">
                     <img src={experience.image} alt={experience.title} />
                     <div className="experience-hover-overlay">
-                      <button className="experience-view-details-btn">
+                      <button 
+                        className="experience-view-details-btn"
+                        onClick={experience.hasGallery ? openGallery : undefined}
+                      >
                         View Details
                       </button>
                     </div>
@@ -131,6 +192,46 @@ const KussiSpecials = () => {
           </div>
         </div>
       </section>
+
+      {/* Gallery Modal */}
+      {showGallery && (
+        <div className="gallery-modal-overlay" onClick={closeGallery}>
+          <div className="gallery-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="gallery-close-btn" onClick={closeGallery}>
+              <i className="fas fa-times"></i>
+            </button>
+            
+            <div className="gallery-main-image">
+              <button className="gallery-nav-btn gallery-prev" onClick={prevImage}>
+                <i className="fas fa-chevron-left"></i>
+              </button>
+              <img 
+                src={scenicOutdoorCookingImages[currentImageIndex]} 
+                alt={`Scenic Outdoor Cooking ${currentImageIndex + 1}`}
+              />
+              <button className="gallery-nav-btn gallery-next" onClick={nextImage}>
+                <i className="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            
+            <div className="gallery-thumbnails">
+              {scenicOutdoorCookingImages.map((image, index) => (
+                <div 
+                  key={index} 
+                  className={`gallery-thumbnail ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={() => goToImage(index)}
+                >
+                  <img src={image} alt={`Thumbnail ${index + 1}`} />
+                </div>
+              ))}
+            </div>
+            
+            <div className="gallery-counter">
+              {currentImageIndex + 1} / {scenicOutdoorCookingImages.length}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
