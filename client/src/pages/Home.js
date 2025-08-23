@@ -343,7 +343,7 @@ const Home = () => {
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="text-center service-card">
                 <div className="service-icon-wrapper bg-success text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{width: '80px', height: '80px'}}>
-                  <i className="fas fa-shield-check fa-2x"></i>
+                  <i className="fas fa-shield-alt fa-2x"></i>
                 </div>
                 <h4>Safe Travel</h4>
                 <p className="text-muted">Your safety is our top priority. We ensure all destinations are thoroughly vetted.</p>
