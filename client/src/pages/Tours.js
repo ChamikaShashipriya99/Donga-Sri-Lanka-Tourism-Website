@@ -49,7 +49,7 @@ const Tours = () => {
       description: "From Arrack to Kitul Toddy and Lion Beer to Baila Songs, immerse in the vibrant spirits culture of Sri Lanka. Search for elusive plant based liquors, sit at ages-old bars, nibble some of the spiciest bar snacks and dance into some baila tunes. This tour is certainly not for the faint-hearted.",
       price: "$120",
       priceNote: "Per head upwards",
-      image: '/images/assets/gallefort.jpg', // Using existing image as placeholder
+      image: '/images/boozecruise/boozecruise10.jpg',
       duration: "4-6 hours",
       difficulty: "Moderate",
       locations: ["Negombo", "Colombo", "Galle", "Sinharaja", "Jaffna"],

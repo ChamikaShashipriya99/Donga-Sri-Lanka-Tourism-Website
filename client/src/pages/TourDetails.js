@@ -10,6 +10,7 @@ const TourDetails = () => {
   const [naturespantryImages, setNaturespantryImages] = useState([]);
   const [themeltingpotImages, setThemeltingpotImages] = useState([]);
   const [nendacooksImages, setNendacooksImages] = useState([]);
+  const [boozecruiseImages, setBoozecruiseImages] = useState([]);
 
   // Tour data - you can move this to a separate file later
   const tours = [
@@ -170,6 +171,21 @@ const TourDetails = () => {
     '/images/nendacooks/nendacooks13.jpg'
   ];
 
+  // Booze Cruise images array
+  const boozecruiseImageList = [
+    '/images/boozecruise/boozecruise1.jpg',
+    '/images/boozecruise/boozecruise2.jpg',
+    '/images/boozecruise/boozecruise3.jpg',
+    '/images/boozecruise/boozecruise4.jpg',
+    '/images/boozecruise/boozecruise5.jpg',
+    '/images/boozecruise/boozecruise6.jpg',
+    '/images/boozecruise/boozecruise7.jpg',
+    '/images/boozecruise/boozecruise8.jpg',
+    '/images/boozecruise/boozecruise9.jpg',
+    '/images/boozecruise/boozecruise10.jpg',
+    '/images/boozecruise/boozecruise11.jpg'
+  ];
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
@@ -199,6 +215,10 @@ const TourDetails = () => {
       // If it's the Nenda Cooks tour, set the images
       if (foundTour.id === 4) {
         setNendacooksImages(nendacooksImageList);
+      }
+      // If it's the Booze Cruise tour, set the images
+      if (foundTour.id === 1) {
+        setBoozecruiseImages(boozecruiseImageList);
       }
     } else {
       // Tour not found, redirect to tours page
@@ -276,7 +296,10 @@ const TourDetails = () => {
                     <i className="fas fa-calendar me-2"></i>
                     Book Now
                   </button>
-                  <button className="btn btn-outline-primary w-100">
+                  <button 
+                    className="btn btn-outline-primary w-100"
+                    onClick={() => navigate('/contact')}
+                  >
                     <i className="fas fa-phone me-2"></i>
                     Contact Us
                   </button>
@@ -418,6 +441,35 @@ const TourDetails = () => {
                           <img
                             src={image}
                             alt={`Traditional Cooking ${index + 1}`}
+                            className="img-fluid rounded"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Booze Cruise Images Gallery - Only show for Booze Cruise tour */}
+      {tour.id === 1 && boozecruiseImages.length > 0 && (
+        <section className="py-5 bg-light">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h2 className="text-center mb-5">Spirits Culture Gallery</h2>
+                <div className="boozecruise-gallery">
+                  <div className="row">
+                    {boozecruiseImages.map((image, index) => (
+                      <div key={index} className="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div className="gallery-item">
+                          <img
+                            src={image}
+                            alt={`Spirits Culture ${index + 1}`}
                             className="img-fluid rounded"
                             loading="lazy"
                           />
