@@ -55,21 +55,45 @@ const Home = () => {
   const slideshowImages = [
     {
       id: 1,
-      src: '/images/assets/slide1.jpg',
+      src: '/images/slideshow/slideshow1.jpg',
       title: 'Sri Lanka Adventures',
       description: 'Discover the beauty of Sri Lankan landscapes'
     },
     {
       id: 2,
-      src: '/images/assets/slide2.jpg',
+      src: '/images/slideshow/slideshow2.jpg',
       title: 'Cultural Heritage',
       description: 'Explore ancient temples and traditions'
     },
     {
       id: 3,
-      src: '/images/assets/slide3.jpg',
+      src: '/images/slideshow/slideshow3.jpg',
       title: 'Natural Wonders',
       description: 'Experience pristine beaches and wildlife'
+    },
+    {
+      id: 4,
+      src: '/images/slideshow/slideshow4.jpg',
+      title: 'Scenic Beauty',
+      description: 'Breathtaking views of Sri Lankan countryside'
+    },
+    {
+      id: 5,
+      src: '/images/slideshow/slideshow5.jpg',
+      title: 'Adventure Awaits',
+      description: 'Embark on unforgettable journeys'
+    },
+    {
+      id: 6,
+      src: '/images/slideshow/slideshow6.jpg',
+      title: 'Local Experiences',
+      description: 'Immerse yourself in authentic culture'
+    },
+    {
+      id: 7,
+      src: '/images/slideshow/slideshow7.jpg',
+      title: 'Memorable Moments',
+      description: 'Create lasting memories in paradise'
     }
   ];
 
@@ -188,52 +212,64 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Tours Section */}
+             {/* Signature Food Ventures Section */}
       <section className="py-5">
         <div className="container">
-          <h2 className="section-title">Featured Tours</h2>
-          <p className="section-subtitle">Experience the best of Sri Lanka with our curated tours</p>
+           <h2 className="section-title">Signature Food Ventures</h2>
+           <p className="section-subtitle">Experience the authentic flavors and culinary traditions of Sri Lanka</p>
           
           <div className="row">
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="featured-tour-card">
-                <img src='/images/assets/gallefort.jpg '/>
-                <div className="tour-info">
-                  <h4>Galle Fort Walking Tour</h4>
-                  <p>Discover the historic Galle Fort with its ramparts, beaches, and vibrant businesses.</p>
-                  <Link to="/galle-fort-tour" className="btn btn-primary btn-sm">Learn More</Link>
-                </div>
-              </div>
-            </div>
-            
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="featured-tour-card">
-                <img src='/images/assets/sinharaja.jpeg '/>
-                <div className="tour-info">
-                  <h4>Sinharaja Rainforest Trek</h4>
-                  <p>Explore Sri Lanka's largest rainforest, a UNESCO protected biodiversity site.</p>
-                  <Link to="/sinharaja-tour" className="btn btn-primary btn-sm">Learn More</Link>
-                </div>
-              </div>
-            </div>
-            
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="featured-tour-card">
-                <img src='/images/assets/koggala.jpeg '/>
-                <div className="tour-info">
-                  <h4>Koggala Lake & Stilt Fishing</h4>
-                  <p>Experience traditional stilt fishing and explore the beautiful Koggala Lake.</p>
-                  <Link to="/koggala-tour" className="btn btn-primary btn-sm">Learn More</Link>
-                </div>
-              </div>
-            </div>
+                         <div className="col-lg-4 col-md-6 mb-4">
+                <div className="food-venture-card">
+                  <div className="food-venture-image mb-3">
+                    <img 
+                      src="/images/eatstreet/eatstreet1.jpg" 
+                      alt="EatStreet Food Venture" 
+                      className="img-fluid rounded"
+                      style={{width: '100%', height: '200px', objectFit: 'cover'}}
+                    />
+                 </div>
+                  <h4>EatStreet</h4>
+                  <p className="text-muted">Experience the vibrant street food culture with our curated EatStreet adventures.</p>
+               </div>
+             </div>
+             
+             <div className="col-lg-4 col-md-6 mb-4">
+                <div className="food-venture-card">
+                  <div className="food-venture-image mb-3">
+                    <img 
+                      src="/images/nendacooks/nendacooks1.jpg" 
+                      alt="NendaCooks Food Venture" 
+                      className="img-fluid rounded"
+                      style={{width: '100%', height: '200px', objectFit: 'cover'}}
+                    />
+                 </div>
+                  <h4>NendaCooks</h4>
+                  <p className="text-muted">Discover authentic local cooking experiences and traditional culinary techniques.</p>
+               </div>
+             </div>
+             
+             <div className="col-lg-4 col-md-6 mb-4">
+                <div className="food-venture-card">
+                  <div className="food-venture-image mb-3">
+                    <img 
+                      src="/images/themeltingpot/themeltingpot1.jpg" 
+                      alt="The Melting Pot Food Venture" 
+                      className="img-fluid rounded"
+                      style={{width: '100%', height: '200px', objectFit: 'cover'}}
+                    />
+                 </div>
+                  <h4>The Melting Pot</h4>
+                  <p className="text-muted">Immerse yourself in diverse culinary traditions and fusion food experiences.</p>
+               </div>
+             </div>
           </div>
           
-          <div className="text-center mt-4">
-            <Link to="/tours" className="btn btn-outline-primary btn-lg">
-              View All Tours
-            </Link>
-          </div>
+                     <div className="text-center mt-4">
+              <Link to="/tours" className="btn btn-outline-primary btn-lg">
+                View All Food Ventures
+             </Link>
+           </div>
         </div>
       </section>
 
@@ -295,9 +331,9 @@ const Home = () => {
           
           <div className="row">
             <div className="col-lg-4 col-md-6 mb-4">
-              <div className="text-center">
-                <div className="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{width: '80px', height: '80px'}}>
-                  <i className="fas fa-map-marked-alt fa-2x"></i>
+              <div className="text-center service-card">
+                <div className="service-icon-wrapper bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{width: '80px', height: '80px'}}>
+                  <i className="fas fa-compass fa-2x"></i>
                 </div>
                 <h4>Expert Guides</h4>
                 <p className="text-muted">Our experienced guides know every hidden gem and will make your journey unforgettable.</p>
@@ -305,9 +341,9 @@ const Home = () => {
             </div>
             
             <div className="col-lg-4 col-md-6 mb-4">
-              <div className="text-center">
-                <div className="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{width: '80px', height: '80px'}}>
-                  <i className="fas fa-shield-alt fa-2x"></i>
+              <div className="text-center service-card">
+                <div className="service-icon-wrapper bg-success text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{width: '80px', height: '80px'}}>
+                  <i className="fas fa-shield-check fa-2x"></i>
                 </div>
                 <h4>Safe Travel</h4>
                 <p className="text-muted">Your safety is our top priority. We ensure all destinations are thoroughly vetted.</p>
@@ -315,9 +351,9 @@ const Home = () => {
             </div>
             
             <div className="col-lg-4 col-md-6 mb-4">
-              <div className="text-center">
-                <div className="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{width: '80px', height: '80px'}}>
-                  <i className="fas fa-heart fa-2x"></i>
+              <div className="text-center service-card">
+                <div className="service-icon-wrapper bg-warning text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{width: '80px', height: '80px'}}>
+                  <i className="fas fa-user-cog fa-2x"></i>
                 </div>
                 <h4>Personalized Service</h4>
                 <p className="text-muted">Every trip is tailored to your preferences, ensuring a truly personal experience.</p>
